@@ -5,8 +5,11 @@ namespace Anagram.Models
 {
   public class AnagramChecker
   {
-    public string Compare(string mainWord, string checkWord)
+
+    public List<string> Compare(string mainWord, string checkWord)
     {
+
+      List<string> resultList = new List<string> {};
 
       char[] mainList = mainWord.ToCharArray();
       char[] compareList = checkWord.ToCharArray();
@@ -16,11 +19,13 @@ namespace Anagram.Models
 
       if (new string(mainList) == new string(compareList))
       {
-        return checkWord;
+        resultList.Add(checkWord);
       }
       else {
-        return "Word is not an Anagram";
+        resultList.Add("Word is not an Anagram");
       }
+
+      return resultList;
     }
   }
 }

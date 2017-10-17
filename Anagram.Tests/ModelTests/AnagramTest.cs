@@ -17,11 +17,12 @@ namespace Anagram.Tests
       AnagramChecker newWord = new AnagramChecker();
 
       //action
-      var result = newWord.Compare("no", "on");
-      var expected = "on";
+      List<string> result = newWord.Compare("no", "on");
+      List<string> expected = new List<string> {"on"};
+
 
       //Assert
-      Assert.AreEqual(expected, result);
+      CollectionAssert.AreEqual(expected, result);
     }
 
     [TestMethod]
@@ -29,14 +30,14 @@ namespace Anagram.Tests
     {
       //Arrange
       AnagramChecker newWord = new AnagramChecker();
+      //List<string> resultList = new List<string> {};
 
       //action
-      var result = newWord.Compare("bread", "beard");
-      var expected = "beard";
-      Console.WriteLine("Output: " + result);
+      List<string> result = newWord.Compare("bread", "beard");
+      List<string> expected = new List<string> {"beard"};
 
       //Assert
-      Assert.AreEqual(expected, result);
+      CollectionAssert.AreEqual(expected, result);
     }
 
     // [TestMethod]
